@@ -15,11 +15,11 @@
         @endif
         <h2>Formulario Video</h2>
         <div class="form-group">
-            <label for="titulo">Titulo</label>
+            <label for="titulo">*Titulo</label>
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingrese  titulo">
         </div>
         <div class="form-group">
-            <label for="descripcion">Descripcion</label>
+            <label for="descripcion">*Descripcion</label>
             <textarea class="form-control" id="descripcion" name="descripcion">
             </textarea>
         </div>

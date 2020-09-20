@@ -1,4 +1,35 @@
-<!DOCTYPE html>
+@extends('layout.app')
+@section('contenido')
+<div class="container">
+    <div class="row">
+        <h1>Lista de Videos</h1>
+        <ul class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <!-- insertar imagen -->
+                    IMAGEN
+                </div>
+                <div class="col-md-8">
+                    <!-- Opciones de video -->
+                    @foreach($videos as $v)
+                        @if(Storage::disk('videos')->has($v->ruta_video))
+                            <video controls  id="video">
+                                <source src="{{url('/video/'.$v->ruta_video)}}">
+                            </video>
+                        @endif
+                        <li>{{$v->titulo}}</li>
+                    @endforeach
+                </div>
+            </div>  
+        </ul>
+    </div>
+    {{$videos->links()}}
+</div>
+@endsection
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -6,10 +37,8 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
@@ -97,4 +126,4 @@
             </div>
         </div>
     </body>
-</html>
+</html> -->

@@ -35,3 +35,8 @@ Route::get('/', function () {
 Route::get('/form-video', 'VideoController@formularioVideo');
 // guardar el video
 Route::post('/guardar-video', 'VideoController@guardarVideo');
+//              ruta            Controlador         metodo
+Route::get('/mostrar-video', 'VideoController@mostrarVideo');
+Route::get('/video/{archivoNombre}', 'VideoController@getVideo');
+
+
